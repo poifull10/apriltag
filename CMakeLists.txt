@@ -10,7 +10,7 @@ set(APRILTAG_SRCS apriltag.c apriltag_pose.c apriltag_quad_thresh.c)
 set(CMAKE_BUILD_TYPE Release)
 
 # Library
-file(GLOB TAG_FILES ${CMAKE_SOURCE_DIR}/tag*.c)
+file(GLOB TAG_FILES ${apriltag_SOURCE_DIR}/tag*.c)
 set_source_files_properties(SOURCE ${TAG_FILES} PROPERTIES COMPILE_FLAGS -O0)
 add_library(${PROJECT_NAME} SHARED ${APRILTAG_SRCS} ${COMMON_SRC} ${TAG_FILES})
 if (MSVC)
